@@ -1,10 +1,17 @@
 const asyncLooper = require('./modules/asyncLooper');
 const $ = require('jquery');
-const tmplHeader = require('./components/Header.hbs');
-
-console.log(tmplHeader);
+const tmplList = require('./components/List.hbs');
+const randomNumber = require('./modules/randomNumber');
 
 asyncLooper(() => {
   const app = $('#app');
-  app.html('');
-}, 1, 100);
+  app.html(tmplList({
+    list: [
+      randomNumber(0, 255),
+      randomNumber(0, 255),
+      randomNumber(0, 255),
+      randomNumber(0, 255),
+      randomNumber(0, 255)
+    ]
+  }));
+}, 10, 100);
