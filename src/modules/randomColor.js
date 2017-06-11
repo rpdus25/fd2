@@ -1,3 +1,3 @@
-const randomNumber = require('./randomNumber');
+import randomNumber from './randomNumber';
 
-module.exports = () => `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`;
+export default () => `rgb(${randomNumber(0, 255)}, ${randomNumber(0, 255)}, ${randomNumber(0, 255)})`;

@@ -1,8 +1,8 @@
-const asyncLooper = require('./modules/asyncLooper');
-const $ = require('jquery');
-const tmplList = require('./components/List.hbs');
-const randomNumber = require('./modules/randomNumber');
-const randomColor = require('./modules/randomColor');
+import $ from 'jquery';
+import asyncLooper from './modules/asyncLooper';
+import randomNumber from './modules/randomNumber';
+import randomColor from './modules/randomColor';
+import tmplList from './components/List.hbs';
 
 asyncLooper(() => {
   const app = $('#app');
