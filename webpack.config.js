@@ -16,5 +16,18 @@ module.exports = {
       loader: 'babel-loader'
     }]
   },
-  plugins: []
+  plugins: [],
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000
+  }
 };
+
+
+
+
+
+
+
+
