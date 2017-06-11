@@ -11,5 +11,13 @@
     "name": "melon",
     "price": 5000,
     "quantity": 30
+  }, {
+    "name": "grape",
+    "price": 3200,
+    "quantity": 10
+  }, {
+    "name": "peach",
+    "price": 2200,
+    "quantity": 19
   }
 ]
