@@ -1,10 +1,9 @@
 import $ from 'jquery';
 import asyncLooper from './modules/asyncLooper';
-import randomNumber from './modules/randomNumber';
-import randomColor from './modules/randomColor';
+import { randomColor, randomNumber } from './modules/random';
 import tmplList from './components/List.hbs';
 
-asyncLooper(() => {
+const render = () => {
   const app = $('#app');
   app.html(tmplList({
     list: [{
@@ -24,4 +23,6 @@ asyncLooper(() => {
       number: randomNumber(0, 255)
     }]
   }));
-}, 10, 100);
+};
+
+$('#btn').on('click', () => asyncLooper(render, 10, 100));
