@@ -8,11 +8,13 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.js/,
+      test: /\.js$/,
       loader: 'eslint-loader',
+      exclude: /node_modules/,
       enforce: 'pre'
     },{
       test: /\.js$/,
+      exclude: /node_modules/,
       loader: 'babel-loader'
     },{
       test: /\.hbs$/,
