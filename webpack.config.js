@@ -12,27 +12,19 @@ module.exports = {
       loader: 'eslint-loader',
       exclude: /node_modules/,
       enforce: 'pre'
-    },{
+    }, {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
-    },{
+    }, {
       test: /\.hbs$/,
       loader: 'handlebars-loader'
     }]
   },
   plugins: [],
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   }
 };
-
-
-
-
-
-
-
-
