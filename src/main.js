@@ -1,27 +1,15 @@
 import $ from 'jquery';
 import asyncLooper from './modules/asyncLooper';
-import { randomColor, randomNumber } from './modules/random';
-import tmplList from './components/List.hbs';
+import tmplFruitBox from './components/FruitBox.hbs';
+import fruits from './assets/fruits.json';
+import styleMain from './assets/css/main.css';
 
+console.log(fruits);
+console.log(styleMain);
 const render = () => {
   const app = $('#app');
-  app.html(tmplList({
-    list: [{
-      color: randomColor(),
-      number: randomNumber(0, 255)
-    }, {
-      color: randomColor(),
-      number: randomNumber(0, 255)
-    }, {
-      color: randomColor(),
-      number: randomNumber(0, 255)
-    }, {
-      color: randomColor(),
-      number: randomNumber(0, 255)
-    }, {
-      color: randomColor(),
-      number: randomNumber(0, 255)
-    }]
+  app.html(tmplFruitBox({
+    fruits
   }));
 };
 

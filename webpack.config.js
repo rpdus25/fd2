@@ -19,8 +19,12 @@ module.exports = {
     }, {
       test: /\.hbs$/,
       loader: 'handlebars-loader'
+    }, {
+      test: /\.css$/,
+      loader: 'css-loader'
     }]
   },
+  devtool: 'cheap-module-eval-source-map',
   plugins: [],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
