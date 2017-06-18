@@ -21,7 +21,13 @@ module.exports = {
       loader: 'handlebars-loader'
     }, {
       test: /\.css$/,
+      loader: 'style-loader'
+    }, {
+      test: /\.css$/,
       loader: 'css-loader'
+    }, {
+      test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg)$/,
+      loader: 'url-loader'
     }]
   },
   devtool: 'cheap-module-eval-source-map',

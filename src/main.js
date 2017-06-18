@@ -13,4 +13,4 @@ const render = () => {
   }));
 };
 
-$('#btn').on('click', () => asyncLooper(render, 10, 100));
+asyncLooper(render, 10, 100);
