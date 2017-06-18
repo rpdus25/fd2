@@ -1,19 +1,19 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve('src/main.js'),
+  entry: path.resolve('src/index.jsx'),
   output: {
     path: path.resolve('dist'),
     filename: 'bundle.js'
   },
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.jsx?$/,
       loader: 'eslint-loader',
       exclude: /node_modules/,
       enforce: 'pre'
     }, {
-      test: /\.js$/,
+      test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
     }, {
@@ -25,6 +25,9 @@ module.exports = {
     }]
   },
   devtool: 'cheap-module-eval-source-map',
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   plugins: [],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
