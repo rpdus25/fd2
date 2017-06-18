@@ -41,7 +41,7 @@ export default function App() {
           </a>
         </Card.Content>
       </Card>
-      <Button onClick={warning}>검색!!!!!</Button>
+      <Button secondary onClick={warning}>검색!!!!!</Button>
       <Button primary>search</Button>
       <Button size="large">하하하하</Button>
       <Button
