@@ -2,3 +2,5 @@
 
 * npm install
 * npm start
+
+App.jsx 밑에 App.js가 자동으로 생기면 지우세요.
