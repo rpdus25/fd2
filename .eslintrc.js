@@ -10,6 +10,8 @@ module.exports = {
         "no-console": 0,
         "no-undef": 0,
         "comma-dangle": 0,
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "react/no-find-dom-node": 0,
+        "react/prop-types": 0
     }
 };
