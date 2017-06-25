@@ -16,7 +16,7 @@ export default class Chat extends React.Component {
       chats
     };
   }
-  componentDidMount() {
+  componentDidUpdate() {
     this.scrollToBottom();
   }
   onChangeHandler(e) {
@@ -43,7 +43,7 @@ export default class Chat extends React.Component {
   }
   scrollToBottom() {
     const element = ReactDOM.findDOMNode(this);
-    element.scrollTop = element.scrollHeight;
+    element.scrollTop = element.scrollHeight - element.clientHeight;
   }
   render() {
     console.log('render');
