@@ -16,6 +16,7 @@ module.exports = {
         "no-unused-vars": 0,
         "jsx-quotes": 0,
         "no-useless-constructor": 0,
-        "react/prefer-stateless-function": 0
+        "react/prefer-stateless-function": 0,
+        "class-methods-use-this": 0
     }
 };
