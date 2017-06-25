@@ -35,7 +35,7 @@ export default class App extends React.Component {
               active={this.state.activeItem === 'editorials'}
               onClick={this.handleItemClick}
             >
-              채팅
+              채팅11채팅채팅
             </Menu.Item>
 
             <Menu.Item
