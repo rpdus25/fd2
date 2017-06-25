@@ -15,6 +15,7 @@ module.exports = {
         "react/prop-types": 0,
         "no-unused-vars": 0,
         "jsx-quotes": 0,
-        "no-useless-constructor": 0
+        "no-useless-constructor": 0,
+        "react/prefer-stateless-function": 0
     }
 };

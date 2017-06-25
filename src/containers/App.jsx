@@ -1,6 +1,7 @@
 import React from 'react';
-import { Header, Menu } from 'semantic-ui-react';
+import { Header, Menu, Container } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
+import Chat from './Chat';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,14 +12,12 @@ export default class App extends React.Component {
     };
   }
   handleItemClick(e, { name }) {
-    console.log(name, this);
     // this.state.activeItem = name;
     this.setState({
       activeItem: name
     });
   }
   render() {
-    console.log('render!!!');
     return (
       <div>
         <Header as="h1">
@@ -28,7 +27,7 @@ export default class App extends React.Component {
               active={this.state.activeItem === 'editorials'}
               onClick={this.handleItemClick}
             >
-              Editorials
+              채팅
             </Menu.Item>
 
             <Menu.Item
@@ -36,7 +35,7 @@ export default class App extends React.Component {
               active={this.state.activeItem === 'reviews'}
               onClick={this.handleItemClick}
             >
-              Reviews
+              기타
             </Menu.Item>
 
             <Menu.Item
@@ -44,10 +43,23 @@ export default class App extends React.Component {
               active={this.state.activeItem === 'upcomingEvents'}
               onClick={this.handleItemClick}
             >
-              Upcoming Events
+              등등
             </Menu.Item>
           </Menu>
         </Header>
+        <Container text style={{ display: this.state.activeItem === 'editorials' ? 'block' : 'none' }}>
+          <Chat />
+        </Container>
+        <Container text style={{ display: this.state.activeItem === 'reviews' ? 'block' : 'none' }}>
+          <Header as='h2'>reviews</Header>
+          <p>Lorem reviews do</p>
+          <p>Lorem reviews do</p>
+        </Container>
+        <Container text style={{ display: this.state.activeItem === 'upcomingEvents' ? 'block' : 'none' }}>
+          <Header as='h2'>upcomingEvents</Header>
+          <p>Lorem ipsum do upcomingEvents</p>
+          <p>Lorem ipsum do upcomingEvents</p>
+        </Container>
       </div>
     );
   }
