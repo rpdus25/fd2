@@ -1,15 +1,23 @@
 import React from 'react';
-import { Header, Menu, Container } from 'semantic-ui-react';
+import { Header, Menu, Container, Dropdown, Button, Image } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import Chat from './Chat';
+import avatar from '../assets/avatars.json';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this);
     this.state = {
-      activeItem: 'editorials'
+      activeItem: 'editorials',
+      avatar: avatar[0]
     };
+  }
+  onClickHandler(avatarPath) {
+    this.setState({
+      avatar: avatarPath
+    });
   }
   handleItemClick(e, { name }) {
     // this.state.activeItem = name;
@@ -45,10 +53,25 @@ export default class App extends React.Component {
             >
               등등
             </Menu.Item>
+            <Menu.Menu position='right'>
+              <Dropdown item trigger={<Image src={this.state.avatar} />}>
+                <Dropdown.Menu>
+                  {avatar.map(v => (
+                    <Dropdown.Item key={v} onClick={e => this.onClickHandler(v)}>
+                      <Image src={v} />
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+
+              <Menu.Item>
+                <Button primary>Sign Up</Button>
+              </Menu.Item>
+            </Menu.Menu>
           </Menu>
         </Header>
         <Container text style={{ display: this.state.activeItem === 'editorials' ? 'block' : 'none' }}>
-          <Chat />
+          <Chat avatar={this.state.avatar} />
         </Container>
         <Container text style={{ display: this.state.activeItem === 'reviews' ? 'block' : 'none' }}>
           <Header as='h2'>reviews</Header>

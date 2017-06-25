@@ -6,7 +6,7 @@ import chats from '../assets/chats.json';
 export default class Chat extends React.Component {
   constructor(props) {
     super(props);
-    console.log('constructor');
+    this.props = props;
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onKeyUpHandler = this.onKeyUpHandler.bind(this);
     this.scrollToBottom = this.scrollToBottom.bind(this);
@@ -32,7 +32,7 @@ export default class Chat extends React.Component {
         chats: [...this.state.chats, {
           id: this.state.chats[this.state.chats.length - 1].id + 1,
           author: this.state.author,
-          avatar: 'http://react.semantic-ui.com/assets/images/avatar/small/steve.jpg',
+          avatar: this.props.avatar,
           text: e.target.value,
           faves: 10,
           date: Date.now()
